@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:id="@+id/container_root"
+    tools:context="com.greendot.ui.FeedbackActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:title="反馈"
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+        <EditText
+            android:id="@+id/txtFeedback"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:inputType="textMultiLine"
+            android:textSize="@dimen/input_text_size"
+            android:minLines="15"
+            android:maxLength="3000"
+            android:gravity="left|top"
+            android:background="@color/colorWhite"
+            android:hint="请输入反馈内容，我们会尽快处理并给予回复..."
+            android:padding="20dp"/>
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        app:layout_constraintBottom_toBottomOf="@id/container_root"
+        app:layout_constraintEnd_toEndOf="@id/container_root"
+        app:srcCompat="@drawable/ic_send" />
+
+
+    <LinearLayout
+        android:id="@+id/loading_mask"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="#000000"
+        android:visibility="gone"
+        android:contextClickable="true"
+        android:alpha="0.0"/>
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/loading"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        style="@style/AVLoadingIndicatorView"
+        app:layout_constraintEnd_toEndOf="@id/container_root"
+        app:layout_constraintStart_toStartOf="@id/container_root"
+        app:layout_constraintTop_toTopOf="@+id/container_root"
+        app:layout_constraintBottom_toBottomOf="@+id/container_root"
+        app:indicatorName="BallBeatIndicator"
+        app:indicatorColor="@color/colorPrimary"/>
+
+</android.support.constraint.ConstraintLayout>

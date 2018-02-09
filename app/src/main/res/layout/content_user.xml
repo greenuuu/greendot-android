@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingVertical="25dp"
+    android:background="@color/colorPrimary"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/imgUserAvatar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/logo"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:id="@+id/txtUserPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_18"
+            android:textColor="#ffffff"
+            android:text="13540312451"
+            android:layout_gravity="center"/>
+        <ImageView
+            android:id="@+id/imgType"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_vip"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtUserExpireDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="@dimen/text_size_14"
+        android:textColor="#eeeeee"/>
+
+</LinearLayout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/container_root"
+    tools:context="com.greendot.ui.LoginActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/content_header_main"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="30dp">
+
+                    <EditText
+                        android:id="@+id/txtPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="11"
+                        android:textSize="@dimen/input_text_size"
+                        android:background="@color/colorInput"
+                        android:padding="@dimen/input_padding"
+                        android:hint="请输入手机号码"
+                        android:textCursorDrawable="@drawable/input_cursor"
+                        android:layout_marginBottom="@dimen/input_margin"/>
+
+                    <EditText
+                        android:id="@+id/txtPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:textSize="@dimen/input_text_size"
+                        android:maxLength="30"
+                        android:hint="请输入登录密码"
+                        android:background="@color/colorInput"
+                        android:padding="@dimen/input_padding"
+                        android:textCursorDrawable="@drawable/input_cursor"
+                        android:layout_marginBottom="@dimen/input_margin"/>
+
+                    <Button
+                        android:id="@+id/btnLogin"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/btn_height"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/colorAccent"
+                        android:gravity="center"
+                        android:textSize="@dimen/input_text_size"
+                        android:background="@drawable/btn_accent_selector"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:text="登录"
+                        android:layout_marginBottom="@dimen/input_margin"/>
+
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/panelExtra"
+                        android:layout_marginBottom="@dimen/input_margin">
+                        <TextView
+                            android:id="@+id/txtFind"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="找回密码"
+                            android:layout_alignParentLeft="true"
+                            android:textSize="@dimen/text_size_14"
+                            android:textColor="@color/colorHint"/>
+
+                        <TextView
+                            android:id="@+id/txtRegister"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="注册账号"
+                            android:textSize="@dimen/text_size_14"
+                            android:layout_alignParentRight="true"
+                            android:textColor="@color/colorHint"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/loading_mask"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="#000000"
+        android:contextClickable="true"
+        android:alpha="0.0"/>
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/loading"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        style="@style/AVLoadingIndicatorView"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/container_root"
+        app:layout_constraintStart_toStartOf="@id/container_root"
+        app:layout_constraintTop_toTopOf="@+id/container_root"
+        app:layout_constraintBottom_toBottomOf="@+id/container_root"
+        app:indicatorName="BallBeatIndicator"
+        app:indicatorColor="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/txtFooterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_site"
+        android:textSize="@dimen/text_size_12"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/colorHint"
+        app:layout_constraintEnd_toEndOf="@id/container_root"
+        app:layout_constraintStart_toStartOf="@id/container_root"
+        app:layout_constraintBottom_toBottomOf="@+id/container_root"/>
+
+</android.support.constraint.ConstraintLayout>

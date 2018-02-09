@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="40dp"
+    android:paddingBottom="25dp"
+    android:background="@color/colorPrimary"
+    android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:src="@drawable/logo"
+            android:layout_width="@dimen/user_avatar_width"
+            android:layout_height="@dimen/user_avatar_height"/>
+
+        <TextView
+            android:id="@+id/txtAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="@dimen/text_size_20"
+            android:textColor="@color/colorWhite"
+            android:text="@string/header_title"/>
+
+        <TextView
+            android:id="@+id/txtAppWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="@dimen/text_size_14"
+            android:textColor="@color/colorLight"
+            android:text="注册即送10天免费试用"/>
+</LinearLayout>

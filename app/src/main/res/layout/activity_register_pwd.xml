@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/container_root"
+    tools:context="com.greendot.ui.RegisterPwdActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:title="注册"
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/content_header_register"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="30dp">
+                    <EditText
+                        android:id="@+id/txtPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:maxLength="30"
+                        android:textSize="@dimen/input_text_size"
+                        android:background="@color/colorInput"
+                        android:padding="@dimen/input_padding"
+                        android:hint="密码：数字、字母、下划线，至少6位"
+                        android:layout_marginBottom="@dimen/input_margin"/>
+
+                    <EditText
+                        android:id="@+id/txtRePassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:maxLength="30"
+                        android:textSize="@dimen/input_text_size"
+                        android:background="@color/colorInput"
+                        android:padding="@dimen/input_padding"
+                        android:hint="请再次输入密码"
+                        android:layout_marginBottom="@dimen/input_margin"/>
+
+                    <EditText
+                        android:id="@+id/txtInviteCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLength="4"
+                        android:textSize="@dimen/input_text_size"
+                        android:background="@color/colorInput"
+                        android:padding="@dimen/input_padding"
+                        android:hint="请输入邀请码，可选"
+                        android:layout_marginBottom="@dimen/input_margin"/>
+
+                    <Button
+                        android:id="@+id/btnSubmit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/btn_height"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/colorAccent"
+                        android:gravity="center"
+                        android:textSize="@dimen/input_text_size"
+                        android:background="@drawable/btn_accent_selector"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:text="注册"/>
+                    </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/loading_mask"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="#000000"
+        android:contextClickable="true"
+        android:alpha="0.0"/>
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/loading"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        style="@style/AVLoadingIndicatorView"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/container_root"
+        app:layout_constraintStart_toStartOf="@id/container_root"
+        app:layout_constraintTop_toTopOf="@+id/container_root"
+        app:layout_constraintBottom_toBottomOf="@+id/container_root"
+        app:indicatorName="BallBeatIndicator"
+        app:indicatorColor="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/txtFooterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_site"
+        android:textSize="@dimen/text_size_12"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/colorHint"
+        app:layout_constraintEnd_toEndOf="@id/container_root"
+        app:layout_constraintStart_toStartOf="@id/container_root"
+        app:layout_constraintBottom_toBottomOf="@+id/container_root"/>
+
+</android.support.constraint.ConstraintLayout>

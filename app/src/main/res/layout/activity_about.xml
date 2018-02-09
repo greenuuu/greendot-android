@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.greendot.ui.AboutActivity"
+    android:id="@+id/container_root">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:title="关于"
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"></WebView>
+
+    </LinearLayout>
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/loading"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        style="@style/AVLoadingIndicatorView"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@id/container_root"
+        app:layout_constraintStart_toStartOf="@id/container_root"
+        app:layout_constraintTop_toTopOf="@+id/container_root"
+        app:layout_constraintBottom_toBottomOf="@+id/container_root"
+        app:indicatorName="BallBeatIndicator"
+        app:indicatorColor="@color/colorPrimary"/>
+
+</android.support.constraint.ConstraintLayout>

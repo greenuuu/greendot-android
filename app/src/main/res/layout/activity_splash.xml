@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container_root"
+    tools:context="com.greendot.ui.SplashActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/container_root"
+        app:layout_constraintStart_toStartOf="@id/container_root"
+        app:layout_constraintTop_toTopOf="@+id/container_root"
+        app:layout_constraintBottom_toBottomOf="@+id/container_root"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="@dimen/user_avatar_width"
+            android:layout_height="@dimen/user_avatar_height"
+            android:src="@drawable/logo"
+            android:alpha="1"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="要想生活过的去，上网必须带点绿"
+        android:layout_margin="20dp"
+        android:textSize="@dimen/text_size_12"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorLight"
+        app:layout_constraintBottom_toBottomOf="@id/container_root"
+        app:layout_constraintEnd_toEndOf="@id/container_root"/>
+
+
+</android.support.constraint.ConstraintLayout>
